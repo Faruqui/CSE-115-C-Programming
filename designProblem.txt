@@ -1,0 +1,112 @@
+Video instructions: If you do not comply with the below definition I WILL GIVE ZERO! NO EXCUSE!
+Video: 20 minutes to IMPLEMENT AND EXPLAIN the problem and your code solution. Explain the overall problem that we are trying to solve. MUST IMPLEMENT AND EXPLAIN the code solution in video. If we cannot access your video, ZERO! NO EXCUSE. MUST HAVE WEBCAM. NO EXCUSE!
+
+Design problem 1:
+The register at North South University would like to CREATE a data-base for the incoming 2018 students’ first exam grade. The behavior of the solution software: 
+
+The register is asked from where he/she wants to save his/her data. The full file path information must be given. CAREFUL: When entering the filepath info name you MAY not have to provide // in place of a / in the file path name. Meaning, when you are entering the file path name from the console you should be able to just enter: D:\registry.csv
+
+After getting the file access, the register can start entering students’ info as long as he/she wants however, if he/she presses ENTER without giving any name in that case the data-collection process stops. So only pressing enter in place of a student name will cause the program to terminate.
+
+The software will SAVE all the student information in a file, named registry.csv. 
+The format of the data MUST be as follows:
+Aqib, 10232u1, 93
+Tahmid, 123834yt, 94
+Mim, 11253435zt, 87
+
+
+Requirements:
+
+1.	The student info MUST be model as a struct called student. However, you cannot use the keyword struct in main() to create it's variable. Remember we talked about typedef and how it can be used to change the names of date-type. Google it wisely!
+
+2.	There can be NO variable declaration other than the struct above the main function. Meaning, you cannot declare any variable outside and above the main function, other than the struct student.
+
+3.	The student struct must have the following fields:
+char name[50]
+char id[20]
+int score
+
+4.	The entire software must be written in top-down design. So I only expect the main to have a few function calls.
+
+5.	FILE * cannot be declared outside main.
+
+
+6.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+int openFileFromConsole(FILE *fp)
+It takes an empty file pointer as input to the function using call by reference. And updates the pointer to point to the appropriate HDD address. IMPORTANT: Later, it asks the user through the console to provide the name and also asks for the file open type: "w", "r", "a" and UPDATES the file pointer. It returns 1 if succeeded, or 0 if fails.
+
+
+7.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+
+void saveStudentGradeInfoTofile(FILE *fp)
+This function gets the student info and saves it first into the student data-type (which is struct but disguised using typedef) then saves it to file. The student information is being provided by the register through the console. This takes the file pointer by reference as input and update the file using fprint.
+
+8.	Must close the file.
+
+9.	If you want to create additional functions, if required. Meaning, the other design decisions must be made appropriately by you.
+ 
+Video instructions: If you do not comply with the below definition I WILL GIVE ZERO! NO EXCUSE!
+Video: 20 minutes to IMPLEMENT AND EXPLAIN the problem and your code solution. Explain the overall problem that we are trying to solve. MUST IMPLEMENT AND EXPLAIN the code solution in video. If we cannot access your video, ZERO! NO EXCUSE. MUST HAVE WEBCAM. NO EXCUSE!
+
+Design problem 2:
+The register at North South University would like to ANAYZE the data-base of the incoming 2018 students’ first exam grade. The behavior of the solution software: 
+
+The register is asked from where he/she wants to get his/her data. The full file path information must be given. CAREFUL: When entering the filepath info name you MAY not have to provide // in place of a / in the file path name. Meaning, when you are entering the file path name from the console you should be able to just enter: D:\registry.csv
+
+The software will GET all the student information from a file, named registry.csv. 
+The format of the data MUST be as follows:
+Aqib, 10232u1, 93
+Tahmid, 123834yt, 94
+Mim, 11253435zt, 87
+
+
+After getting the file access, the software will get all the data from the file and save the information in a student type array. Then the software will analyze the student array to get the average of the student scores, print the best and worst student information.
+
+
+Requirements:
+
+1.	The student info MUST be model as a struct called student. However, you cannot use the keyword struct in main() to create it's variable. Remember we talked about typedef and how it can be used to change the names of date-type. Google it wisely!
+
+2.	There can be NO variable declaration other than the struct above the main function. Meaning, you cannot declare any variable outside and above the main function, other than the struct student.
+
+3.	The student struct must have the following fields:
+char name[50]
+char id[20]
+int score
+
+4.	The entire software must be written in top-down design. So I only expect the main to have a few function calls.
+
+5.	FILE * cannot be declared outside main.
+
+
+6.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+int openFileFromConsole(FILE *fp)
+It takes an empty file pointer as input to the function using call by reference. And updates the pointer to point to the appropriate HDD address. IMPORTANT: Later, it asks the user through the console to provide the name and also asks for the file open type: "w", "r", "a" and UPDATES the file pointer. It returns 1 if succeeded, or 0 if fails.
+
+7.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+void getStudentGradesInfoToArray(FILE *fp, int allocSize, int logicalSize, student array[])
+This function gets the student info from file one by one and saves them into an array student type. This array must be designed using the concepts showed in the removeInsert problem of mid 2. Remember to use atoi or something to convert from string to int. Google wisely.
+
+
+8.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+float getAverageGrade(int allocSize, int logicalSize, student array[])
+This returns the average grade considering all the students in the student array.
+
+
+9.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+student getBestStudent(int allocSize, int logicalSize, student array[])
+This returns the best student among the all the students in the array.
+
+
+10.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+student getWorstStudent(int allocSize, int logicalSize, student array[])
+This returns the worst student among the all the students in the array.
+
+
+11.	MUST IMPLEMENT THE FOLLOWING FUNCTION:
+void printStudentInfo(student x)
+This prints the information that is hidden in the student struct x. Use this to print information of the best and worst student.
+
+12.	Must close the file.
+
+13.	If you want to create additional functions, if required. Meaning, the other design decisions must be made appropriately by you.
